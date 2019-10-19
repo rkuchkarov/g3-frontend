@@ -1,0 +1,12 @@
+.chunkObject {
+    padding: 15px;
+    background-color: #c0ca33;
+    cursor: default;
+}
+
+.objectsTitle {
+    font-weight: bold;
+    text-align: center;
+    font-size: 19px;
+    background-color: #b6bf2f;
+}

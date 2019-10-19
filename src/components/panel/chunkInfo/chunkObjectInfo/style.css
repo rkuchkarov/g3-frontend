@@ -1,0 +1,10 @@
+.chunkObjectInfo {
+    margin-top: 10px;
+    border-bottom: solid 1px #99aa00;
+}
+
+.chunkType {
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+}

@@ -1,0 +1,11 @@
+.mapWrapper {
+    width: 900px;
+    height: 900px;
+    padding-left: 315px;
+    margin: 0 auto;
+}
+
+.map {
+    width: 900px;
+    height: 900px;
+}

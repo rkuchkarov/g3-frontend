@@ -1,0 +1,12 @@
+.chunk {
+    cursor: pointer;
+}
+
+.chunk:hover {
+    opacity: 0.7;
+}
+
+.chunk.opened {
+    opacity: 0.8;
+    cursor: default;
+}

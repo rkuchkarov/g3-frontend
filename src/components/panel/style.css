@@ -1,0 +1,21 @@
+.panel {
+    width: 315px;
+    background-color: #cddc39;
+    position: fixed;
+    height: 100%;
+    overflow-y: scroll;
+    box-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+.panel::-webkit-scrollbar {
+    display: none;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #99aa00;
+    padding: 10px 0;
+    cursor: default;
+}
