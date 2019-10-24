@@ -10,7 +10,7 @@ const Panel = ({ date, openedChunkInfo }) => {
     return (
         <div className={'panel'}>
             <div className={'title'}>
-                {date}
+                {date && <div>{date.day}&nbsp;день {date.ten}&nbsp;декады {date.month}&nbsp;месяца {date.year}&nbsp;года</div>}
             </div>
             {
                 isChunkInfoShown && <ChunkInfo chunkObjects={chunkObjects}/>

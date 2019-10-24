@@ -6,8 +6,8 @@ const ChunkInfo = ({ chunkObjects }) => (
     <div className={'chunkObject'}>
         <div className={'objectsTitle'}>Объекты</div>
         { chunkObjects.map((chunkObject, index) => {
-            const chunkType = chunkObject.type;
-            const chunkInfo = chunkObject.info;
+            const { type: chunkType, info: chunkInfo } = chunkObject;
+            console.log(chunkObject);
             if (!chunkInfo) {
                 return null;
             }
