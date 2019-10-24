@@ -6,7 +6,8 @@ const initialState = {
         isOpened: false,
         chunkId: null,
         chunkInfo: null
-    }
+    },
+    date: null
 };
 
 const reducer = (state = initialState, action) => {
@@ -30,6 +31,12 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 chunks: action.chunks
+            };
+
+        case A.DATE_FETCHED:
+            return {
+                ...state,
+                date: action.date
             };
 
         case A.CHUNK_INFO_FETCHED:

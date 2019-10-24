@@ -15,40 +15,13 @@ class G3Service {
         return G3Service.getResource('/map');
     }
 
+    static getDate() {
+        return G3Service.getResource('/date');
+    }
+
     static getChunkInfo(id) {
         console.log(`infoFetched ${id}`);
         return G3Service.getResource(`/chunk/${id}`);
-        return {
-            characters: [{
-                name: 'Патриарх',
-                skill: 3
-            }, {
-                name: 'Пигодий',
-                skill: 5
-            }],
-            forest: [
-                {
-                    "id": "5f853e8d-3f73-4883-8581-17dc0c8121e3",
-                    "size": 3,
-                    "masterships": [
-                        {
-                            "mastery": {
-                                "name": "Охота"
-                            },
-                            "capacity": 0,
-                            "max_capacity": 0
-                        },
-                        {
-                            "mastery": {
-                                "name": "Собирательство грибов и ягод"
-                            },
-                            "capacity": 0,
-                            "max_capacity": 0
-                        }
-                    ]
-                }
-            ]
-        }
     }
 }
 

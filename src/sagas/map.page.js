@@ -4,6 +4,15 @@ import * as A from '../actions';
 import * as selectors from "../selectors/selectors";
 import G3Service from "../services/g3-service";
 
+function* fetchDate() {
+    try {
+        const response = yield call(G3Service.getDate);
+        yield put(A.fetchedDate(response.result));
+    } catch (e) {
+        console.log('error', e);
+    }
+}
+
 function* fetchMap() {
     try {
         const response = yield call(G3Service.getChunks);
@@ -26,6 +35,7 @@ function* fetchChunkInfo() {
 }
 
 function* watchMapPage() {
+    yield takeLatest(A.DATE_FETCH, fetchDate);
     yield takeLatest(A.MAP_FETCH, fetchMap);
 }
 
@@ -37,5 +47,6 @@ export default function* mapPageSaga() {
 
 function* mapPageFlow() {
     yield put(A.resetState());
+    yield put(A.fetchDate());
     yield put(A.fetchMap());
 }
