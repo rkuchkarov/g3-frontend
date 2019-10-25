@@ -9,7 +9,7 @@ const TRANSLATES = {
     forest: 'лес',
     swamp: 'болото',
     hill: 'холм',
-    lake: 'озеро'
+    lakes: 'озеро'
 };
 
 const ChunkObjectInfo = ({ chunkType, chunkInfo }) => {
