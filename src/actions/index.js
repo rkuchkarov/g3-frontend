@@ -7,10 +7,17 @@ export const DATE_FETCHED = 'DATE_FETCHED';
 export const DATE_FETCH = 'DATE_FETCH';
 export const CHUNK_INFO_FETCH = 'CHUNK_INFO_FETCH';
 export const CHUNK_INFO_FETCHED = 'CHUNK_INFO_FETCHED';
+export const NEXT_DAY_CLICKED = 'NEXT_DAY_CLICKED';
 
 export const resetState = () => {
     return {
         type: RESET_STATE
+    }
+};
+
+export const clickNextDay = () => {
+    return {
+        type: NEXT_DAY_CLICKED
     }
 };
 

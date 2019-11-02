@@ -23,6 +23,11 @@ class G3Service {
         console.log(`infoFetched ${id}`);
         return G3Service.getResource(`/chunk/${id}`);
     }
+
+
+    static nextDate() {
+        return G3Service.getResource('/nextdate');
+    }
 }
 
 export default G3Service;

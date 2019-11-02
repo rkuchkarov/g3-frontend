@@ -4,6 +4,16 @@ import * as A from '../actions';
 import * as selectors from "../selectors/selectors";
 import G3Service from "../services/g3-service";
 
+function* setNexDate() {
+    try {
+        yield call(G3Service.nextDate);
+        yield put(A.fetchDate());
+        yield put(A.fetchMap());
+    } catch (e) {
+        console.log('error', e);
+    }
+}
+
 function* fetchDate() {
     try {
         const response = yield call(G3Service.getDate);
@@ -43,6 +53,7 @@ export default function* mapPageSaga() {
     yield fork(watchMapPage);
     yield takeLatest(A.MAP_OPEN, mapPageFlow);
     yield takeLatest(A.CHUNK_INFO_OPENED, fetchChunkInfo);
+    yield takeLatest(A.NEXT_DAY_CLICKED, setNexDate);
 }
 
 function* mapPageFlow() {

@@ -5,6 +5,8 @@
     height: 100%;
     overflow-y: scroll;
     box-shadow: 0 0 6px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
 }
 
 .panel::-webkit-scrollbar {
@@ -18,4 +20,18 @@
     background-color: #99aa00;
     padding: 10px 23px;
     cursor: default;
+}
+
+.nextDay {
+    background-color: #99aa00;
+    padding: 10px 23px;
+    cursor: pointer;
+    margin-top: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.nextDay:hover {
+    background-color: #8c9900;
 }
