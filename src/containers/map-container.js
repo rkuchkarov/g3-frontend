@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import * as selectors from "../selectors/selectors";
 import Map from "../components/map";
-import { openMap, openChunkInfo } from "../actions";
+import { openMap, openChunkInfo, clickNextDay } from "../actions";
 import Panel from "../components/panel";
 import './style.css';
 
@@ -14,11 +14,11 @@ class MapContainer extends Component {
     }
 
     render() {
-        const { chunks, isChunkOpened, openedChunkInfo, date, openChunkInfo, openedChunkId } = this.props;
+        const { chunks, isChunkOpened, openedChunkInfo, date, openChunkInfo, openedChunkId, clickNextDay } = this.props;
 
         return(
             <div className={'container'}>
-                <Panel date={date}  isChunkOpened={isChunkOpened} openedChunkInfo={openedChunkInfo} />
+                <Panel date={date}  isChunkOpened={isChunkOpened} openedChunkInfo={openedChunkInfo} clickNextDay={clickNextDay} />
                 <Map chunks={chunks} onClickChunk={openChunkInfo} openedChunkId={openedChunkId}/>
             </div>
         );
@@ -32,14 +32,14 @@ const mapStateToProps = (state) => {
         openedChunkInfo: selectors.getOpenedChunkInfo(state),
         openedChunkId: selectors.getChunkOpenedId(state),
         date: selectors.getDate(state)
-
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         openMap,
-        openChunkInfo
+        openChunkInfo,
+        clickNextDay
     }, dispatch);
 };
 
