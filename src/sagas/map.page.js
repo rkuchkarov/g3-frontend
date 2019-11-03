@@ -7,8 +7,11 @@ import G3Service from "../services/g3-service";
 function* setNexDate() {
     try {
         yield call(G3Service.nextDate);
-        yield put(A.fetchDate());
-        yield put(A.fetchMap());
+        yield call(mapPageFlow);
+        const openedChunkId = yield select(selectors.getChunkOpenedId);
+        if (openedChunkId) {
+            yield call(fetchChunkInfo);
+        }
     } catch (e) {
         console.log('error', e);
     }
@@ -57,7 +60,6 @@ export default function* mapPageSaga() {
 }
 
 function* mapPageFlow() {
-    yield put(A.resetState());
     yield put(A.fetchDate());
     yield put(A.fetchMap());
 }
