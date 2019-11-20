@@ -15,6 +15,10 @@ class G3Service {
         return G3Service.getResource('/map');
     }
 
+    static getPersons() {
+        return G3Service.getResource('/persons');
+    }
+
     static getDate() {
         return G3Service.getResource('/date');
     }

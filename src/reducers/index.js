@@ -7,6 +7,7 @@ const initialState = {
         chunkId: null,
         chunkInfo: null
     },
+    persons: [],
     date: null
 };
 
@@ -46,6 +47,12 @@ const reducer = (state = initialState, action) => {
                     ...state.openedChunk,
                     chunkInfo: action.info
                 }
+            };
+
+        case A.PERSONS_FETCHED:
+            return {
+                ...state,
+                persons: action.persons
             };
 
         default:
