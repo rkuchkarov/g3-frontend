@@ -4,9 +4,13 @@
     cursor: default;
 }
 
-.objectsTitle {
+.objectsTitle, .personsTitle {
     font-weight: bold;
     text-align: center;
     font-size: 19px;
     background-color: #b6bf2f;
+}
+
+.personsTitle {
+    margin-top: 15px;
 }

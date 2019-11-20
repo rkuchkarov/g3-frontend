@@ -3,7 +3,7 @@ import _ from "lodash";
 import ChunkInfo from "./chunkInfo";
 import './style.css';
 
-const Panel = ({ date, openedChunkInfo, clickNextDay }) => {
+const Panel = ({ date, openedChunkId, openedChunkInfo, clickNextDay, persons }) => {
     const chunkObjects = _.map(openedChunkInfo, (value, prop) => ({ type: prop, info: value }));
     const isChunkInfoShown = chunkObjects && chunkObjects.length > 0;
 
@@ -13,7 +13,7 @@ const Panel = ({ date, openedChunkInfo, clickNextDay }) => {
                 {date && <div>{date.day}&nbsp;день {date.ten}&nbsp;декады {date.month}&nbsp;месяца {date.year}&nbsp;года</div>}
             </div>
             {
-                isChunkInfoShown && <ChunkInfo chunkObjects={chunkObjects}/>
+                isChunkInfoShown && <ChunkInfo openedChunkId={openedChunkId} persons={persons} chunkObjects={chunkObjects}/>
             }
             <div className={'nextDay'} onClick={clickNextDay}>Следующий день</div>
         </div>

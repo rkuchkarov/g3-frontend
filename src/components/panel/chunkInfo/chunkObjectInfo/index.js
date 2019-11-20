@@ -13,7 +13,7 @@ const TRANSLATES = {
 };
 
 const ChunkObjectInfo = ({ chunkType, chunkInfo }) => {
-    const isArray = chunkType === 'lakes' || chunkType === 'rivers';
+    const isArray = chunkType === 'rivers';
 
     const renderInfo = (name, size, masterships, index) => (
         <>

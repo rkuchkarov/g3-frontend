@@ -35,6 +35,15 @@ function* fetchMap() {
     }
 }
 
+function* fetchPersons() {
+    try {
+        const response = yield call(G3Service.getPersons);
+        yield put(A.fetchedPersons(response.result.items));
+    } catch (e) {
+        console.log('error', e);
+    }
+}
+
 function* fetchChunkInfo() {
     const openedChunkId = yield select(selectors.getChunkOpenedId);
     try {
@@ -50,6 +59,7 @@ function* fetchChunkInfo() {
 function* watchMapPage() {
     yield takeLatest(A.DATE_FETCH, fetchDate);
     yield takeLatest(A.MAP_FETCH, fetchMap);
+    yield takeLatest(A.PERSONS_FETCH, fetchPersons);
 }
 
 export default function* mapPageSaga() {
@@ -62,4 +72,5 @@ export default function* mapPageSaga() {
 function* mapPageFlow() {
     yield put(A.fetchDate());
     yield put(A.fetchMap());
+    yield put(A.fetchPersons());
 }

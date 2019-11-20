@@ -14,11 +14,11 @@ class MapContainer extends Component {
     }
 
     render() {
-        const { chunks, isChunkOpened, openedChunkInfo, date, openChunkInfo, openedChunkId, clickNextDay } = this.props;
+        const { chunks, isChunkOpened, openedChunkInfo, date, openChunkInfo, openedChunkId, clickNextDay, persons } = this.props;
 
         return(
             <div className={'container'}>
-                <Panel date={date}  isChunkOpened={isChunkOpened} openedChunkInfo={openedChunkInfo} clickNextDay={clickNextDay} />
+                <Panel openedChunkId={openedChunkId} persons={persons} date={date}  isChunkOpened={isChunkOpened} openedChunkInfo={openedChunkInfo} clickNextDay={clickNextDay} />
                 <Map chunks={chunks} onClickChunk={openChunkInfo} openedChunkId={openedChunkId}/>
             </div>
         );
@@ -28,6 +28,7 @@ class MapContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         chunks: selectors.getChunks(state),
+        persons: selectors.getPersons(state),
         isChunkOpened: selectors.getIsChunkOpened(state),
         openedChunkInfo: selectors.getOpenedChunkInfo(state),
         openedChunkId: selectors.getChunkOpenedId(state),

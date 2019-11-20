@@ -2,7 +2,9 @@ export const RESET_STATE = 'RESET_STATE';
 export const MAP_OPEN = 'MAP_OPEN';
 export const CHUNK_INFO_OPENED = 'CHUNK_INFO_OPENED';
 export const MAP_FETCH = 'MAP_FETCH';
+export const PERSONS_FETCH = 'PERSONS_FETCH';
 export const MAP_FETCHED = 'MAP_FETCHED';
+export const PERSONS_FETCHED = 'PERSONS_FETCHED';
 export const DATE_FETCHED = 'DATE_FETCHED';
 export const DATE_FETCH = 'DATE_FETCH';
 export const CHUNK_INFO_FETCH = 'CHUNK_INFO_FETCH';
@@ -40,6 +42,12 @@ export const fetchMap = () => {
     }
 };
 
+export const fetchPersons = () => {
+    return {
+        type: PERSONS_FETCH
+    }
+};
+
 export const fetchDate = () => {
     return {
         type: DATE_FETCH
@@ -57,6 +65,13 @@ export const fetchedMap = (chunks) => {
     return {
         type: MAP_FETCHED,
         chunks
+    }
+};
+
+export const fetchedPersons = (persons) => {
+    return {
+        type: PERSONS_FETCHED,
+        persons
     }
 };
 
