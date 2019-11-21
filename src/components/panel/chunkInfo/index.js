@@ -27,7 +27,7 @@ const ChunkInfo = ({ openedChunkId, chunkObjects, persons }) => {
                         const masteryById = _.find(mastership, (m) => {
                             return m.Mastery.id === action
                         });
-                        const actionName = masteryById ? masteryById.Mastery.name : 'Ждёт';
+                        const actionName = masteryById ? masteryById.Mastery.name : action === 'waiting' ? 'Ждёт' : undefined;
                         return (<Character action={actionName} isMale={is_male} masterships={mastership} name={name} age={age} key={index}/>)})
                     }
                 </>
