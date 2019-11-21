@@ -3,7 +3,7 @@ import fisher from './fisher.png';
 import './style.css';
 import CharacterMastership from "./mastership";
 
-const Character = ({ isMale, name, age, masterships }) => (
+const Character = ({ isMale, action, name, age, masterships }) => (
     <div className={'characterWrapper'}>
         <div className={'characterTitle'}>
             <img className={'fisherImage'} src={fisher}/>
@@ -13,6 +13,7 @@ const Character = ({ isMale, name, age, masterships }) => (
                 <div>Пол: {isMale ? 'Мужчина': 'Женщина'}</div>
             </div>
         </div>
+        {action && <div><b>Состояние:</b> {action}</div>}
         {masterships && <div>
             <div className={'personMastershipsTitle'}><b>Способности:</b></div>
             { masterships && masterships.map(({ Skill, Mastery}, index) => (

@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import './style.css';
 import ChunkObjectInfo from "./chunkObjectInfo";
 import Character from "./chunkCharactersInfo";
@@ -22,8 +23,12 @@ const ChunkInfo = ({ openedChunkId, chunkObjects, persons }) => {
                 <>
                     <div className={'personsTitle'}>Персонажи</div>
                     { personsInChunk.map((person, index) => {
-                        const {name, age, mastership, is_male} = person;
-                        return (<Character isMale={is_male} masterships={mastership} name={name} age={age} key={index}/>)})
+                        const {name, age, mastership, is_male, action} = person;
+                        const masteryById = _.find(mastership, (m) => {
+                            return m.Mastery.id === action
+                        });
+                        const actionName = masteryById ? masteryById.Mastery.name : 'Ждёт';
+                        return (<Character action={actionName} isMale={is_male} masterships={mastership} name={name} age={age} key={index}/>)})
                     }
                 </>
             }
