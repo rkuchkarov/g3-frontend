@@ -1,0 +1,32 @@
+.itemWrapper {
+    height: 72px;
+    width: 72px;
+    text-align: center;
+}
+
+.itemName {
+    position: relative;
+    bottom: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 1;
+}
+
+.itemIcon {
+    width: 42px;
+    height: 50px;
+}
+
+.itemTooltip {
+    box-shadow: 0 0 6px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    background-color: white;
+    width: 100px;
+    min-width: 150px;
+    padding: 10px;
+}
+
+.tooltipTitle {
+    font-weight: bold;
+    text-align: center;
+}

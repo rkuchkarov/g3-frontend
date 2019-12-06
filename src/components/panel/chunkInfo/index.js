@@ -4,7 +4,7 @@ import './style.css';
 import ChunkObjectInfo from "./chunkObjectInfo";
 import Character from "./chunkCharactersInfo";
 
-const ChunkInfo = ({ openedChunkId, chunkObjects, persons }) => {
+const ChunkInfo = ({ inventoryPersonId, openedChunkId, chunkObjects, persons, closeInventory, openInventory }) => {
     const personsInChunk = persons.filter((person) => person.chunk_id === openedChunkId);
     const isPersonsShown = personsInChunk.length > 0;
 
@@ -23,12 +23,25 @@ const ChunkInfo = ({ openedChunkId, chunkObjects, persons }) => {
                 <>
                     <div className={'personsTitle'}>Персонажи</div>
                     { personsInChunk.map((person, index) => {
-                        const {name, age, mastership, is_male, action} = person;
+                        const {id, name, age, mastership, is_male, day_action: { action }, inventory} = person;
                         const masteryById = _.find(mastership, (m) => {
-                            return m.Mastery.id === action
+                            return m.mastery.id === action
                         });
-                        const actionName = masteryById ? masteryById.Mastery.name : action === 'waiting' ? 'Ждёт' : undefined;
-                        return (<Character action={actionName} isMale={is_male} masterships={mastership} name={name} age={age} key={index}/>)})
+                        const actionName = masteryById ? masteryById.mastery.name : action === 'waiting' ? 'Ждёт' : undefined;
+                        return (
+                            <Character
+                                personId={id}
+                                inventoryPersonId={inventoryPersonId}
+                                inventory={inventory}
+                                closeInventory={closeInventory}
+                                openInventory={openInventory}
+                                action={actionName}
+                                isMale={is_male}
+                                masterships={mastership}
+                                name={name}
+                                age={age}
+                                key={index}
+                            />)})
                     }
                 </>
             }
