@@ -10,10 +10,26 @@ export const DATE_FETCH = 'DATE_FETCH';
 export const CHUNK_INFO_FETCH = 'CHUNK_INFO_FETCH';
 export const CHUNK_INFO_FETCHED = 'CHUNK_INFO_FETCHED';
 export const NEXT_DAY_CLICKED = 'NEXT_DAY_CLICKED';
+export const INVENTORY_OPENED = 'INVENTORY_OPENED';
+export const INVENTORY_CLOSED = 'INVENTORY_CLOSED';
 
 export const resetState = () => {
     return {
         type: RESET_STATE
+    }
+};
+
+export const openInventory = (personId) => {
+    return {
+        type: INVENTORY_OPENED,
+        personId
+    }
+};
+
+
+export const closeInventory = () => {
+    return {
+        type: INVENTORY_CLOSED
     }
 };
 

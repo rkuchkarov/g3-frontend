@@ -1,0 +1,18 @@
+.itemWrapper {
+    height: 72px;
+    width: 72px;
+    text-align: center;
+}
+
+.itemName {
+    position: relative;
+    bottom: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.itemIcon {
+    width: 50px;
+    height: 50px;
+}

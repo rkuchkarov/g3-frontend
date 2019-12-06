@@ -1,0 +1,41 @@
+.inventoryWrapper {
+    position: fixed;
+    left: 330px;
+    bottom: 14px;
+    width: 392px;
+    height: 279px;
+    background-color: #c0ca33;
+    overflow-y: scroll;
+    box-shadow: 0 0 6px rgba(0,0,0,0.5);
+    border: solid 2px #99aa00;
+    box-sizing: border-box;
+    padding: 30px 13px 0 13px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inventoryWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.inventoryHeader {
+    display: flex;
+    justify-content: space-between;
+    background-color: #99aa00;
+    position: fixed;
+    padding: 0 10px;
+    width: 392px;
+    height: 30px;
+    margin-top: -30px;
+    margin-left: -15px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.inventoryClose {
+    cursor: pointer;
+}
+
+.inventoryTitle {
+    font-weight: bold;
+}
