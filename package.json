@@ -9,6 +9,7 @@
     "react-redux": "^7.1.0",
     "react-scripts": "3.0.1",
     "react-scroll-box": "^0.3.5",
+    "react-tooltip-lite": "^1.10.0",
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5",
     "reselect": "^4.0.0"

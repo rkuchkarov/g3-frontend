@@ -9,15 +9,16 @@ const Inventory = ({ items, closeInventory }) => (
             <div className={'inventoryClose'}>Закрыть</div>
         </div>
         {Object.keys(items).map((key) => {
-            const { creationDate, expDate, id, limit, name, quality, weight } = items[key];
+            const { creationDate, expDate, id, limit, name, quality, weight,category } = items[key];
             return <Item
-                // creationDate={CreationDate}
-                // expDate={ExpDate}
-                // id={ID}
-                // limit={Limit}
+                creationDate={creationDate}
+                expDate={expDate}
+                id={id}
+                limit={limit}
                 name={name}
-                // quality={Quality}
-                // weight={Weight}
+                quality={quality}
+                weight={weight}
+                category={category}
             />
         }
 
